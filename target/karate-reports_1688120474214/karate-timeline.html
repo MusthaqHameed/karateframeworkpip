@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.1:23]","start":1688120378507,"end":1688120380734,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.1:23] 15:49:38.507-15:49:40.734 HTTP  Testing"},{"id":2,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.2:23]","start":1688120380739,"end":1688120381477,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.2:23] 15:49:40.739-15:49:41.477 HTTP  Testing","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.3:23]","start":1688120381481,"end":1688120381973,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.3:23] 15:49:41.481-15:49:41.973 HTTP  Testing","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.4:23]","start":1688120381977,"end":1688120382476,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.4:23] 15:49:41.977-15:49:42.476 HTTP  Testing","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.5:23]","start":1688120382480,"end":1688120382988,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.5:23] 15:49:42.480-15:49:42.988 HTTP  Testing","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/common\/Common_Services[1.1:27]","start":1688204751737,"end":1688204755438,"title":"src\/test\/java\/common\/Common_Services[1.1:27] 15:15:51.737-15:15:55.438 HTTP Method Testing","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/common\/Common_Services[1.2:27]","start":1688204755446,"end":1688204756408,"title":"src\/test\/java\/common\/Common_Services[1.2:27] 15:15:55.446-15:15:56.408 HTTP Method Testing","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/common\/Common_Services[2:30]","start":1688204756414,"end":1688204756434,"title":"src\/test\/java\/common\/Common_Services[2:30] 15:15:56.414-15:15:56.434 Create employee POST Call","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/common\/Common_Services[3:47]","start":1688204756442,"end":1688204756448,"title":"src\/test\/java\/common\/Common_Services[3:47] 15:15:56.442-15:15:56.448 POST Call","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/common\/Common_Services[4:62]","start":1688204756455,"end":1688204756460,"title":"src\/test\/java\/common\/Common_Services[4:62] 15:15:56.455-15:15:56.460 Create employee POST Call","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/common\/Common_Services[5:79]","start":1688204756468,"end":1688204756998,"title":"src\/test\/java\/common\/Common_Services[5:79] 15:15:56.468-15:15:56.998 GET Call"},{"id":7,"group":1,"content":"src\/test\/java\/common\/Common_Services[6:90]","start":1688204757004,"end":1688204757009,"title":"src\/test\/java\/common\/Common_Services[6:90] 15:15:57.004-15:15:57.009 Create employee POST Call","className":"failed"},{"id":8,"group":1,"content":"src\/test\/java\/common\/Common_Services[7:103]","start":1688204757014,"end":1688204757019,"title":"src\/test\/java\/common\/Common_Services[7:103] 15:15:57.014-15:15:57.019 Create employee POST Call","className":"failed"},{"id":9,"group":1,"content":"src\/test\/java\/common\/Common_Services[8:116]","start":1688204757023,"end":1688204757040,"title":"src\/test\/java\/common\/Common_Services[8:116] 15:15:57.023-15:15:57.040 GET Call","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

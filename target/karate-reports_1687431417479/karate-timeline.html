@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3},{"content":"pool-1-thread-4","id":4},{"content":"pool-1-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"Karate_API\/TestRun[1.1:20]","start":1687431268992,"end":1687431272528,"title":"Karate_API\/TestRun[1.1:20] 16:24:28.992-16:24:32.528 HTTP  Testing","className":"failed"},{"id":2,"group":2,"content":"Karate_API\/TestRun2[1:4]","start":1687431268983,"end":1687431272323,"title":"Karate_API\/TestRun2[1:4] 16:24:28.983-16:24:32.323 HTTP Method Testing","className":"failed"},{"id":3,"group":3,"content":"Karate_API\/TestRun3[1:4]","start":1687431268984,"end":1687431273760,"title":"Karate_API\/TestRun3[1:4] 16:24:28.984-16:24:33.760 HTTP Method Testing"},{"id":4,"group":4,"content":"Karate_API\/TestRun4[1:4]","start":1687431268985,"end":1687431272404,"title":"Karate_API\/TestRun4[1:4] 16:24:28.985-16:24:32.404 HTTP Method Testing","className":"failed"},{"id":5,"group":5,"content":"Karate_API\/TestRun5[1:4]","start":1687431268999,"end":1687431272376,"title":"Karate_API\/TestRun5[1:4] 16:24:28.999-16:24:32.376 HTTP Method Testing","className":"failed"},{"id":6,"group":2,"content":"Karate_API\/TestRun_ClassParallel[1.1:20]","start":1687431272333,"end":1687431272845,"title":"Karate_API\/TestRun_ClassParallel[1.1:20] 16:24:32.333-16:24:32.845 HTTP  Testing","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

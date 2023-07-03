@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3},{"content":"pool-1-thread-4","id":4},{"content":"pool-1-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"Karate_API\/TestRun[1:4]","start":1687009446905,"end":1687009450055,"title":"Karate_API\/TestRun[1:4] 19:14:06.905-19:14:10.055 HTTP Method Testing","className":"failed"},{"id":2,"group":2,"content":"Karate_API\/TestRun[2:16]","start":1687009446905,"end":1687009449944,"title":"Karate_API\/TestRun[2:16] 19:14:06.905-19:14:09.944 HTTP Method Testing","className":"failed"},{"id":3,"group":3,"content":"Karate_API\/TestRun[3:28]","start":1687009446905,"end":1687009449988,"title":"Karate_API\/TestRun[3:28] 19:14:06.905-19:14:09.988 HTTP Method Testing","className":"failed"},{"id":4,"group":4,"content":"Karate_API\/TestRun[4:40]","start":1687009446905,"end":1687009450811,"title":"Karate_API\/TestRun[4:40] 19:14:06.905-19:14:10.811 HTTP Method Testing"},{"id":5,"group":5,"content":"Karate_API\/TestRun[5:52]","start":1687009446905,"end":1687009449949,"title":"Karate_API\/TestRun[5:52] 19:14:06.905-19:14:09.949 HTTP Method Testing","className":"failed"},{"id":6,"group":2,"content":"Karate_API\/TestRun2[1:4]","start":1687009449948,"end":1687009450419,"title":"Karate_API\/TestRun2[1:4] 19:14:09.948-19:14:10.419 HTTP Method Testing","className":"failed"},{"id":7,"group":5,"content":"Karate_API\/TestRun2[2:16]","start":1687009449954,"end":1687009450458,"title":"Karate_API\/TestRun2[2:16] 19:14:09.954-19:14:10.458 HTTP Method Testing","className":"failed"},{"id":8,"group":3,"content":"Karate_API\/TestRun2[3:28]","start":1687009450056,"end":1687009450542,"title":"Karate_API\/TestRun2[3:28] 19:14:10.056-19:14:10.542 HTTP Method Testing","className":"failed"},{"id":9,"group":1,"content":"Karate_API\/TestRun2[4:40]","start":1687009450061,"end":1687009450811,"title":"Karate_API\/TestRun2[4:40] 19:14:10.061-19:14:10.811 HTTP Method Testing","className":"failed"},{"id":10,"group":2,"content":"Karate_API\/TestRun2[5:52]","start":1687009450423,"end":1687009450868,"title":"Karate_API\/TestRun2[5:52] 19:14:10.423-19:14:10.868 HTTP Method Testing","className":"failed"},{"id":11,"group":5,"content":"Karate_API\/TestRun3[1:4]","start":1687009450461,"end":1687009451095,"title":"Karate_API\/TestRun3[1:4] 19:14:10.461-19:14:11.095 HTTP Method Testing","className":"failed"},{"id":12,"group":3,"content":"Karate_API\/TestRun3[2:16]","start":1687009450546,"end":1687009451142,"title":"Karate_API\/TestRun3[2:16] 19:14:10.546-19:14:11.142 HTTP Method Testing","className":"failed"},{"id":13,"group":4,"content":"Karate_API\/TestRun3[3:28]","start":1687009450816,"end":1687009451379,"title":"Karate_API\/TestRun3[3:28] 19:14:10.816-19:14:11.379 HTTP Method Testing","className":"failed"},{"id":14,"group":1,"content":"Karate_API\/TestRun3[4:40]","start":1687009450816,"end":1687009451313,"title":"Karate_API\/TestRun3[4:40] 19:14:10.816-19:14:11.313 HTTP Method Testing","className":"failed"},{"id":15,"group":2,"content":"Karate_API\/TestRun3[5:52]","start":1687009450871,"end":1687009451439,"title":"Karate_API\/TestRun3[5:52] 19:14:10.871-19:14:11.439 HTTP Method Testing","className":"failed"},{"id":16,"group":5,"content":"Karate_API\/TestRun4[1:4]","start":1687009451098,"end":1687009451549,"title":"Karate_API\/TestRun4[1:4] 19:14:11.098-19:14:11.549 HTTP Method Testing","className":"failed"},{"id":17,"group":3,"content":"Karate_API\/TestRun4[2:16]","start":1687009451145,"end":1687009451596,"title":"Karate_API\/TestRun4[2:16] 19:14:11.145-19:14:11.596 HTTP Method Testing","className":"failed"},{"id":18,"group":1,"content":"Karate_API\/TestRun4[3:28]","start":1687009451316,"end":1687009451765,"title":"Karate_API\/TestRun4[3:28] 19:14:11.316-19:14:11.765 HTTP Method Testing","className":"failed"},{"id":19,"group":4,"content":"Karate_API\/TestRun4[4:40]","start":1687009451382,"end":1687009451879,"title":"Karate_API\/TestRun4[4:40] 19:14:11.382-19:14:11.879 HTTP Method Testing","className":"failed"},{"id":20,"group":2,"content":"Karate_API\/TestRun4[5:52]","start":1687009451443,"end":1687009451960,"title":"Karate_API\/TestRun4[5:52] 19:14:11.443-19:14:11.960 HTTP Method Testing","className":"failed"},{"id":21,"group":5,"content":"Karate_API\/TestRun5[1:4]","start":1687009451554,"end":1687009452061,"title":"Karate_API\/TestRun5[1:4] 19:14:11.554-19:14:12.061 HTTP Method Testing","className":"failed"},{"id":22,"group":3,"content":"Karate_API\/TestRun5[2:16]","start":1687009451601,"end":1687009452123,"title":"Karate_API\/TestRun5[2:16] 19:14:11.601-19:14:12.123 HTTP Method Testing","className":"failed"},{"id":23,"group":1,"content":"Karate_API\/TestRun5[3:28]","start":1687009451770,"end":1687009452414,"title":"Karate_API\/TestRun5[3:28] 19:14:11.770-19:14:12.414 HTTP Method Testing","className":"failed"},{"id":24,"group":4,"content":"Karate_API\/TestRun5[4:40]","start":1687009451884,"end":1687009452477,"title":"Karate_API\/TestRun5[4:40] 19:14:11.884-19:14:12.477 HTTP Method Testing","className":"failed"},{"id":25,"group":2,"content":"Karate_API\/TestRun5[5:52]","start":1687009451964,"end":1687009452528,"title":"Karate_API\/TestRun5[5:52] 19:14:11.964-19:14:12.528 HTTP Method Testing","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

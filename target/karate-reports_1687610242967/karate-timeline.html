@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.1:25]","start":1687610131913,"end":1687610134440,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.1:25] 18:05:31.913-18:05:34.440 HTTP  Testing","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.2:25]","start":1687610134447,"end":1687610135064,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.2:25] 18:05:34.447-18:05:35.064 HTTP  Testing","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.3:25]","start":1687610135067,"end":1687610135561,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.3:25] 18:05:35.067-18:05:35.561 HTTP  Testing","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.4:25]","start":1687610135566,"end":1687610136048,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.4:25] 18:05:35.566-18:05:36.048 HTTP  Testing","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.5:25]","start":1687610136052,"end":1687610136846,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.5:25] 18:05:36.052-18:05:36.846 HTTP  Testing","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.1:14]","start":1687608114066,"end":1687608116252,"title":"src\/test\/java\/Karate_API\/TestRun[1.1:14] 17:31:54.066-17:31:56.252 HTTP  Testing"},{"id":2,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.2:14]","start":1687608116256,"end":1687608116697,"title":"src\/test\/java\/Karate_API\/TestRun[1.2:14] 17:31:56.256-17:31:56.697 HTTP  Testing"},{"id":3,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.3:14]","start":1687608116701,"end":1687608117140,"title":"src\/test\/java\/Karate_API\/TestRun[1.3:14] 17:31:56.701-17:31:57.140 HTTP  Testing"},{"id":4,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.4:14]","start":1687608117143,"end":1687608117568,"title":"src\/test\/java\/Karate_API\/TestRun[1.4:14] 17:31:57.143-17:31:57.568 HTTP  Testing"},{"id":5,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.5:14]","start":1687608117572,"end":1687608118019,"title":"src\/test\/java\/Karate_API\/TestRun[1.5:14] 17:31:57.572-17:31:58.019 HTTP  Testing"},{"id":6,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.6:14]","start":1687608118022,"end":1687608118441,"title":"src\/test\/java\/Karate_API\/TestRun[1.6:14] 17:31:58.022-17:31:58.441 HTTP  Testing"},{"id":7,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.7:14]","start":1687608118444,"end":1687608118900,"title":"src\/test\/java\/Karate_API\/TestRun[1.7:14] 17:31:58.444-17:31:58.900 HTTP  Testing"},{"id":8,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.8:14]","start":1687608118903,"end":1687608119318,"title":"src\/test\/java\/Karate_API\/TestRun[1.8:14] 17:31:58.903-17:31:59.318 HTTP  Testing"},{"id":9,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.9:14]","start":1687608119322,"end":1687608119794,"title":"src\/test\/java\/Karate_API\/TestRun[1.9:14] 17:31:59.322-17:31:59.794 HTTP  Testing"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.1:22]","start":1688122620452,"end":1688122622940,"title":"src\/test\/java\/Karate_API\/TestRun[1.1:22] 16:27:00.452-16:27:02.940 HTTP  Testing","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.2:22]","start":1688122622945,"end":1688122623378,"title":"src\/test\/java\/Karate_API\/TestRun[1.2:22] 16:27:02.945-16:27:03.378 HTTP  Testing","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.3:22]","start":1688122623382,"end":1688122624349,"title":"src\/test\/java\/Karate_API\/TestRun[1.3:22] 16:27:03.382-16:27:04.349 HTTP  Testing","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.4:22]","start":1688122624353,"end":1688122624837,"title":"src\/test\/java\/Karate_API\/TestRun[1.4:22] 16:27:04.353-16:27:04.837 HTTP  Testing","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.5:22]","start":1688122624840,"end":1688122625317,"title":"src\/test\/java\/Karate_API\/TestRun[1.5:22] 16:27:04.840-16:27:05.317 HTTP  Testing","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.6:22]","start":1688122625320,"end":1688122625849,"title":"src\/test\/java\/Karate_API\/TestRun[1.6:22] 16:27:05.320-16:27:05.849 HTTP  Testing","className":"failed"},{"id":7,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.7:22]","start":1688122625852,"end":1688122626294,"title":"src\/test\/java\/Karate_API\/TestRun[1.7:22] 16:27:05.852-16:27:06.294 HTTP  Testing","className":"failed"},{"id":8,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.8:22]","start":1688122626297,"end":1688122627078,"title":"src\/test\/java\/Karate_API\/TestRun[1.8:22] 16:27:06.297-16:27:07.078 HTTP  Testing","className":"failed"},{"id":9,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.9:22]","start":1688122627082,"end":1688122627886,"title":"src\/test\/java\/Karate_API\/TestRun[1.9:22] 16:27:07.082-16:27:07.886 HTTP  Testing","className":"failed"},{"id":10,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.10:22]","start":1688122627889,"end":1688122628715,"title":"src\/test\/java\/Karate_API\/TestRun[1.10:22] 16:27:07.889-16:27:08.715 HTTP  Testing","className":"failed"},{"id":11,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun[1.11:22]","start":1688122628717,"end":1688122629247,"title":"src\/test\/java\/Karate_API\/TestRun[1.11:22] 16:27:08.717-16:27:09.247 HTTP  Testing"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

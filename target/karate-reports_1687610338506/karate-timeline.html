@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.1:25]","start":1687610243959,"end":1687610246278,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.1:25] 18:07:23.959-18:07:26.278 HTTP  Testing","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.2:25]","start":1687610246283,"end":1687610246750,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.2:25] 18:07:26.283-18:07:26.750 HTTP  Testing","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.3:25]","start":1687610246755,"end":1687610247225,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.3:25] 18:07:26.755-18:07:27.225 HTTP  Testing","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.4:25]","start":1687610247229,"end":1687610247675,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.4:25] 18:07:27.229-18:07:27.675 HTTP  Testing","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.5:25]","start":1687610247680,"end":1687610248203,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.5:25] 18:07:27.680-18:07:28.203 HTTP  Testing","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.6:25]","start":1687610248206,"end":1687610248652,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.6:25] 18:07:28.206-18:07:28.652 HTTP  Testing","className":"failed"},{"id":7,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.7:25]","start":1687610248654,"end":1687610249099,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.7:25] 18:07:28.654-18:07:29.099 HTTP  Testing","className":"failed"},{"id":8,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.8:25]","start":1687610249102,"end":1687610249630,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.8:25] 18:07:29.102-18:07:29.630 HTTP  Testing","className":"failed"},{"id":9,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.9:25]","start":1687610249633,"end":1687610250130,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.9:25] 18:07:29.633-18:07:30.130 HTTP  Testing","className":"failed"},{"id":10,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.10:25]","start":1687610250132,"end":1687610250572,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.10:25] 18:07:30.132-18:07:30.572 HTTP  Testing","className":"failed"},{"id":11,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.11:25]","start":1687610250574,"end":1687610251015,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.11:25] 18:07:30.574-18:07:31.015 HTTP  Testing","className":"failed"},{"id":12,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.12:25]","start":1687610251018,"end":1687610251446,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.12:25] 18:07:31.018-18:07:31.446 HTTP  Testing","className":"failed"},{"id":13,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.13:25]","start":1687610251449,"end":1687610251903,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.13:25] 18:07:31.449-18:07:31.903 HTTP  Testing","className":"failed"},{"id":14,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.14:25]","start":1687610251905,"end":1687610252345,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.14:25] 18:07:31.905-18:07:32.345 HTTP  Testing","className":"failed"},{"id":15,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.15:25]","start":1687610252347,"end":1687610252852,"title":"src\/test\/java\/Karate_API\/TestRun_FromJson_Direct[1.15:25] 18:07:32.347-18:07:32.852 HTTP  Testing","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

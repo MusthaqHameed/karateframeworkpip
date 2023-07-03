@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.1:22]","start":1688120276039,"end":1688120278811,"title":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.1:22] 15:47:56.039-15:47:58.811 HTTP  Testing","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.2:22]","start":1688120278816,"end":1688120279567,"title":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.2:22] 15:47:58.816-15:47:59.567 HTTP  Testing","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.3:22]","start":1688120279572,"end":1688120280253,"title":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.3:22] 15:47:59.572-15:48:00.253 HTTP  Testing","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.4:22]","start":1688120280257,"end":1688120280718,"title":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.4:22] 15:48:00.257-15:48:00.718 HTTP  Testing","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.5:22]","start":1688120280722,"end":1688120281336,"title":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.5:22] 15:48:00.722-15:48:01.336 HTTP  Testing","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.6:22]","start":1688120281339,"end":1688120281821,"title":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.6:22] 15:48:01.339-15:48:01.821 HTTP  Testing","className":"failed"},{"id":7,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.7:22]","start":1688120281824,"end":1688120282469,"title":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.7:22] 15:48:01.824-15:48:02.469 HTTP  Testing","className":"failed"},{"id":8,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.8:22]","start":1688120282472,"end":1688120283168,"title":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.8:22] 15:48:02.472-15:48:03.168 HTTP  Testing","className":"failed"},{"id":9,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.9:22]","start":1688120283171,"end":1688120283631,"title":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.9:22] 15:48:03.171-15:48:03.631 HTTP  Testing","className":"failed"},{"id":10,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.10:22]","start":1688120283635,"end":1688120284171,"title":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.10:22] 15:48:03.635-15:48:04.171 HTTP  Testing","className":"failed"},{"id":11,"group":1,"content":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.11:22]","start":1688120284174,"end":1688120285075,"title":"src\/test\/java\/Karate_API\/TestRun_FromExcel_Dynamic[1.11:22] 15:48:04.174-15:48:05.075 HTTP  Testing","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
