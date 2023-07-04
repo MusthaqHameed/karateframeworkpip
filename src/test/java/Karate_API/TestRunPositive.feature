@@ -9,14 +9,16 @@ Feature: API_Testing
     * call read(COMMON_SERVICES_PATH+'@POSTEXCELDATA') { PAYLOAD:'#(stringname)' }
     * print responseStatus
     * print response
-    * def response = response
-    * def dataToWrite = response.{Name:<name>,Salary:<salary>,Age:<age>}
-    * def filePath = 'testwritedata.csv'
-    * def karate.write(dataToWrite,filePath)
+    * def res = response
+    * print res
+    # * def dataToWrite = res
+    * def filePath = 'writeTestData.csv'
+    * eval karate.write( res, filePath)
     # Validation
     * match responseStatus == 200
-    # * print response.data.Name
-    #  * match response.data.Name == <name>
+    * print response.data.Name
+    * def Name = response.data.Name
+    #   * match Name == <name>
     * print response.data.Salary
     * match response.data.Salary == <salary>
     * print response.data.Age
@@ -27,6 +29,8 @@ Feature: API_Testing
     # Calling Common Service.feature for Created ID
     * call read(COMMON_SERVICES_PATH+'@GETEMPLOYEE') { PARAM_ID:'#(idParam)' }
     # Validation
+    * print responseStatus
+    * match responseStatus == 200
     * print response.data.Salary
     * match response.data.Salary == <salary>
     * print response.data.Age

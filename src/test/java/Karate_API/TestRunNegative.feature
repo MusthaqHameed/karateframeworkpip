@@ -6,11 +6,16 @@ Feature: API_Testing
     * def stringname = {Name:<name>,Salary:<salary>,Age:<age>}
     * print stringname
     # Calling Common Service.feature
-    * call read(COMMON_SERVICES_PATH+'@POSTEXCELDATANEGATIVE') { PAYLOAD:'#(stringname)' }
+    * call read(COMMON_SERVICES_PATH+'@POSTEXCELDATA') { PAYLOAD:'#(stringname)' }
     * print response
-     * def response = response
-      * def Demowriter = Java.type('writefile.java.WriteFile')
-    * def result = Demowriter.writeFile('testwritedata.csv','response')
+    * def res = response
+     * print res
+    * print responseStatus
+    * def status = responseStatus
+   * print status 
+   * match status == 204
+    * def filePath = 'writeTestData.csv'
+    * eval karate.write( status, filePath)
     # Validation
     # * print response.data.Name
     #  * match response.data.Name == <name>
