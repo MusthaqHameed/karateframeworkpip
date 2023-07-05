@@ -11,9 +11,6 @@ Feature: API_Testing
     * print response
     * def res = response
     * print res
-    # * def dataToWrite = res
-    * def filePath = 'writeTestData.csv'
-    * eval karate.write( res, filePath)
     # Validation
     * match responseStatus == 200
     * print response.data.Name

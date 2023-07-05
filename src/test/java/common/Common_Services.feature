@@ -90,7 +90,8 @@ Feature: HTTP calls
   Scenario: Create employee POST Call
     # Providing the Common Services API (Refer karate-config.js file)
     * path POST
-    * configure retry = { count: 3, interval: 5000 }
+   # * configure retry = { count: 3, interval: 5000 }
+   #  * retry until responseStatus == 200
     # Providing the Excel payload as a request body
     * request __arg.PAYLOAD
     # Here Authorization
@@ -112,12 +113,25 @@ Feature: HTTP calls
     # Requesting POST request
     * method post
     * print responseStatus
-    
 
   @GETEMPLOYEE
   Scenario: GET Call
     # Providing the GET Download Template API
     * path GET_ONE + __arg.PARAM_ID
+    # Authorizing
+    * header Authorization = AUTH_TOKEN
+    # Requesting GET request
+    * method get
+    * print responseStatus
+    * print response
+
+  @GETEMPLOYEENEGATIVE
+  Scenario: GET Call
+    # Providing the GET Download Template API
+    * path GET_ONE + __arg.PARAM_ID
+    # Retry logic
+    * configure retry = { count: 3, interval: 5000 }
+    * retry until responseStatus == 200
     # Authorizing
     * header Authorization = AUTH_TOKEN
     # Requesting GET request
