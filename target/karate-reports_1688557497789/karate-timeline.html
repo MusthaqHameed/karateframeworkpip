@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/Karate_API\/TestRunNegative[1.1:39]","start":1688557258122,"end":1688557272889,"title":"src\/test\/java\/Karate_API\/TestRunNegative[1.1:39] 17:10:58.122-17:11:12.889 HTTP Method Negative Testing","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/Karate_API\/TestRunNegative[1.2:39]","start":1688557272894,"end":1688557273554,"title":"src\/test\/java\/Karate_API\/TestRunNegative[1.2:39] 17:11:12.894-17:11:13.554 HTTP Method Negative Testing","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/Karate_API\/TestRunNegative[1.3:39]","start":1688557273559,"end":1688557274038,"title":"src\/test\/java\/Karate_API\/TestRunNegative[1.3:39] 17:11:13.559-17:11:14.038 HTTP Method Negative Testing","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/Karate_API\/TestRunNegative[1.4:39]","start":1688557274041,"end":1688557275617,"title":"src\/test\/java\/Karate_API\/TestRunNegative[1.4:39] 17:11:14.041-17:11:15.617 HTTP Method Negative Testing","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/Karate_API\/TestRunNegative[1.5:39]","start":1688557275621,"end":1688557276112,"title":"src\/test\/java\/Karate_API\/TestRunNegative[1.5:39] 17:11:15.621-17:11:16.112 HTTP Method Negative Testing","className":"failed"},{"id":6,"group":1,"content":"src\/test\/java\/Karate_API\/TestRunNegative[1.6:39]","start":1688557276116,"end":1688557276641,"title":"src\/test\/java\/Karate_API\/TestRunNegative[1.6:39] 17:11:16.116-17:11:16.641 HTTP Method Negative Testing","className":"failed"},{"id":7,"group":1,"content":"src\/test\/java\/Karate_API\/TestRunNegative[1.7:39]","start":1688557276645,"end":1688557277163,"title":"src\/test\/java\/Karate_API\/TestRunNegative[1.7:39] 17:11:16.645-17:11:17.163 HTTP Method Negative Testing","className":"failed"},{"id":8,"group":1,"content":"src\/test\/java\/Karate_API\/TestRunNegative[1.8:39]","start":1688557277166,"end":1688557278074,"title":"src\/test\/java\/Karate_API\/TestRunNegative[1.8:39] 17:11:17.166-17:11:18.074 HTTP Method Negative Testing","className":"failed"},{"id":9,"group":1,"content":"src\/test\/java\/Karate_API\/TestRunNegative[1.9:39]","start":1688557278077,"end":1688557278648,"title":"src\/test\/java\/Karate_API\/TestRunNegative[1.9:39] 17:11:18.077-17:11:18.648 HTTP Method Negative Testing","className":"failed"},{"id":10,"group":1,"content":"src\/test\/java\/Karate_API\/TestRunNegative[1.10:39]","start":1688557278650,"end":1688557279107,"title":"src\/test\/java\/Karate_API\/TestRunNegative[1.10:39] 17:11:18.650-17:11:19.107 HTTP Method Negative Testing","className":"failed"},{"id":11,"group":1,"content":"src\/test\/java\/Karate_API\/TestRunNegative[1.11:39]","start":1688557279110,"end":1688557279622,"title":"src\/test\/java\/Karate_API\/TestRunNegative[1.11:39] 17:11:19.110-17:11:19.622 HTTP Method Negative Testing","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
